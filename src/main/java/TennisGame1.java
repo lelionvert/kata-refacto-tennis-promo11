@@ -4,9 +4,6 @@ public class TennisGame1 implements TennisGame {
     private int m_score1 = 0;
     private int m_score2 = 0;
 
-    TennisGame1() {
-    }
-
     public void wonPoint(String playerName) {
         if (playerName.equals("player1"))
             m_score1 += 1;
