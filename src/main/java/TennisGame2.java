@@ -1,103 +1,92 @@
-
-public class TennisGame2 implements TennisGame
-{
+public class TennisGame2 implements TennisGame {
     private int scorePlayer1 = 0;
     private int scorePlayer2 = 0;
-    
+
     private String player1result = "";
     private String player2result = "";
 
-    public String getScore(){
+    public String getScore() {
         String score = "";
-        if (scorePlayer1 == scorePlayer2 && scorePlayer1 < 4)
-        {
-            if (scorePlayer1 ==0)
+        if (scorePlayer1 == scorePlayer2 && scorePlayer1 < 4) {
+            if (scorePlayer1 == 0)
                 score = "Love";
-            if (scorePlayer1 ==1)
+            if (scorePlayer1 == 1)
                 score = "Fifteen";
-            if (scorePlayer1 ==2)
+            if (scorePlayer1 == 2)
                 score = "Thirty";
             score += "-All";
         }
-        if (scorePlayer1 == scorePlayer2 && scorePlayer1 >=3)
+        if (scorePlayer1 == scorePlayer2 && scorePlayer1 >= 3)
             score = "Deuce";
-        
-        if (scorePlayer1 > 0 && scorePlayer2 ==0)
-        {
-            if (scorePlayer1 ==1)
+
+        if (scorePlayer1 > 0 && scorePlayer2 == 0) {
+            if (scorePlayer1 == 1)
                 player1result = "Fifteen";
-            if (scorePlayer1 ==2)
+            if (scorePlayer1 == 2)
                 player1result = "Thirty";
-            if (scorePlayer1 ==3)
+            if (scorePlayer1 == 3)
                 player1result = "Forty";
-            
+
             player2result = "Love";
             score = player1result + "-" + player2result;
         }
-        if (scorePlayer2 > 0 && scorePlayer1 ==0)
-        {
-            if (scorePlayer2 ==1)
+        if (scorePlayer2 > 0 && scorePlayer1 == 0) {
+            if (scorePlayer2 == 1)
                 player2result = "Fifteen";
-            if (scorePlayer2 ==2)
+            if (scorePlayer2 == 2)
                 player2result = "Thirty";
-            if (scorePlayer2 ==3)
+            if (scorePlayer2 == 3)
                 player2result = "Forty";
-            
+
             player1result = "Love";
             score = player1result + "-" + player2result;
         }
-        
-        if (scorePlayer1 > scorePlayer2 && scorePlayer1 < 4)
-        {
-            if (scorePlayer1 ==2)
-                player1result ="Thirty";
-            if (scorePlayer1 ==3)
-                player1result ="Forty";
-            if (scorePlayer2 ==1)
-                player2result ="Fifteen";
-            if (scorePlayer2 ==2)
-                player2result ="Thirty";
+
+        if (scorePlayer1 > scorePlayer2 && scorePlayer1 < 4) {
+            if (scorePlayer1 == 2)
+                player1result = "Thirty";
+            if (scorePlayer1 == 3)
+                player1result = "Forty";
+            if (scorePlayer2 == 1)
+                player2result = "Fifteen";
+            if (scorePlayer2 == 2)
+                player2result = "Thirty";
             score = player1result + "-" + player2result;
         }
-        if (scorePlayer2 > scorePlayer1 && scorePlayer2 < 4)
-        {
-            if (scorePlayer2 ==2)
-                player2result ="Thirty";
-            if (scorePlayer2 ==3)
-                player2result ="Forty";
-            if (scorePlayer1 ==1)
-                player1result ="Fifteen";
-            if (scorePlayer1 ==2)
-                player1result ="Thirty";
+        if (scorePlayer2 > scorePlayer1 && scorePlayer2 < 4) {
+            if (scorePlayer2 == 2)
+                player2result = "Thirty";
+            if (scorePlayer2 == 3)
+                player2result = "Forty";
+            if (scorePlayer1 == 1)
+                player1result = "Fifteen";
+            if (scorePlayer1 == 2)
+                player1result = "Thirty";
             score = player1result + "-" + player2result;
         }
-        
-        if (scorePlayer1 > scorePlayer2 && scorePlayer2 >= 3)
-        {
+
+        if (scorePlayer1 > scorePlayer2 && scorePlayer2 >= 3) {
             score = "Advantage player1";
         }
-        
-        if (scorePlayer2 > scorePlayer1 && scorePlayer1 >= 3)
-        {
+
+        if (scorePlayer2 > scorePlayer1 && scorePlayer1 >= 3) {
             score = "Advantage player2";
         }
-        
-        if (scorePlayer1 >=4 && scorePlayer2 >=0 && (scorePlayer1 - scorePlayer2)>=2)
-        {
+
+        if (scorePlayer1 >= 4 && scorePlayer2 >= 0 && (scorePlayer1 - scorePlayer2) >= 2) {
             score = "Win for player1";
         }
-        if (scorePlayer2 >=4 && scorePlayer1 >=0 && (scorePlayer2 - scorePlayer1)>=2)
-        {
+        if (scorePlayer2 >= 4 && scorePlayer1 >= 0 && (scorePlayer2 - scorePlayer1) >= 2) {
             score = "Win for player2";
         }
         return score;
     }
 
-    private void P1Score(){
+    private void P1Score() {
         scorePlayer1++;
     }
-    
-    private void P2Score(){
+
+    private void P2Score() {
         scorePlayer2++;
     }
 
