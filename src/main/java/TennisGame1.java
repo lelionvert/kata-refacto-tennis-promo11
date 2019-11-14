@@ -30,7 +30,7 @@ public class TennisGame1 implements TennisGame {
         if (decisiveGamePoint()) {
             return getScoreWhenDecisive();
         }
-        return getScoreWhenDifferentAndLowerThan4();
+        return getScoreRegularPlay();
     }
 
     private boolean decisiveGamePoint() {
@@ -71,7 +71,7 @@ public class TennisGame1 implements TennisGame {
         return score.toString();
     }
 
-    private String getScoreWhenDifferentAndLowerThan4() {
+    private String getScoreRegularPlay() {
         StringBuilder score = new StringBuilder();
 
         getScoreForPoints(score, m_score1);
