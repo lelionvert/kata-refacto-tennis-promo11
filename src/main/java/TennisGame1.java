@@ -52,12 +52,12 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            score = toto();
+            score = getScoreWhenDifferentAndLowerThan4();
         }
         return score.toString();
     }
 
-    private StringBuilder toto() {
+    private StringBuilder getScoreWhenDifferentAndLowerThan4() {
         StringBuilder score = new StringBuilder();
         int tempScore;
         for (int i = 1; i<3; i++)
