@@ -26,25 +26,25 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         if (m_score1 == m_score2) {
-            return  getScoreWhenEqual().toString();
+            return  getScoreWhenEqual();
         }
         if (m_score1 >= 4 || m_score2 >= 4) {
-            return getScoreWhenAbove4Points().toString();
+            return getScoreWhenAbove4Points();
         }
-        return getScoreWhenDifferentAndLowerThan4().toString();
+        return getScoreWhenDifferentAndLowerThan4();
     }
 
-    private StringBuilder getScoreWhenAbove4Points() {
+    private String getScoreWhenAbove4Points() {
         StringBuilder score;
         int minusResult = m_score1-m_score2;
         if (minusResult==1) score = new StringBuilder("Advantage player1");
         else if (minusResult ==-1) score = new StringBuilder("Advantage player2");
         else if (minusResult>=2) score = new StringBuilder("Win for player1");
         else score = new StringBuilder("Win for player2");
-        return score;
+        return score.toString();
     }
 
-    private StringBuilder getScoreWhenEqual() {
+    private String getScoreWhenEqual() {
         StringBuilder score;
         switch (m_score1)
         {
@@ -62,16 +62,16 @@ public class TennisGame1 implements TennisGame {
                 break;
 
         }
-        return score;
+        return score.toString();
     }
 
-    private StringBuilder getScoreWhenDifferentAndLowerThan4() {
+    private String getScoreWhenDifferentAndLowerThan4() {
         StringBuilder score = new StringBuilder();
 
         getScoreForPoints(score, m_score1);
         score.append("-");
         getScoreForPoints(score, m_score2);
-        return score;
+        return score.toString();
     }
 
     private void getScoreForPoints(StringBuilder score, int tempScore) {
