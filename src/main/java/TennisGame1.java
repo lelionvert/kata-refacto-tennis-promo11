@@ -32,17 +32,23 @@ public class TennisGame1 implements TennisGame {
         }
         else if (m_score1>=4 || m_score2>=4)
         {
-            int minusResult = m_score1-m_score2;
-            if (minusResult==1) score = new StringBuilder("Advantage player1");
-            else if (minusResult ==-1) score = new StringBuilder("Advantage player2");
-            else if (minusResult>=2) score = new StringBuilder("Win for player1");
-            else score = new StringBuilder("Win for player2");
+            score = getScoreWhenAbove4Points();
         }
         else
         {
             score = getScoreWhenDifferentAndLowerThan4();
         }
         return score.toString();
+    }
+
+    private StringBuilder getScoreWhenAbove4Points() {
+        StringBuilder score;
+        int minusResult = m_score1-m_score2;
+        if (minusResult==1) score = new StringBuilder("Advantage player1");
+        else if (minusResult ==-1) score = new StringBuilder("Advantage player2");
+        else if (minusResult>=2) score = new StringBuilder("Win for player1");
+        else score = new StringBuilder("Win for player2");
+        return score;
     }
 
     private StringBuilder getScoreWhenEqual() {
