@@ -28,7 +28,7 @@ public class TennisGame1 implements TennisGame {
             return getScoreWhenEqual();
         }
         if (decisiveGamePoint()) {
-            return getScoreWhenAbove4Points();
+            return getScoreWhenDecisive();
         }
         return getScoreWhenDifferentAndLowerThan4();
     }
@@ -41,7 +41,7 @@ public class TennisGame1 implements TennisGame {
         return m_score1 == m_score2;
     }
 
-    private String getScoreWhenAbove4Points() {
+    private String getScoreWhenDecisive() {
         StringBuilder score;
         int minusResult = m_score1 - m_score2;
         if (minusResult == 1) score = new StringBuilder("Advantage player1");
