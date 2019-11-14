@@ -1,11 +1,11 @@
 public class TennisGame1 implements TennisGame {
 
-    public static final String ZERO = "Love";
-    public static final String ONE = "Fifteen";
-    public static final String TWO = "Thirty";
-    public static final String THREE = "Forty";
-    private int m_score1 = 0;
-    private int m_score2 = 0;
+    private static final String LOVE = "Love";
+    private static final String FIFTEEN = "Fifteen";
+    private static final String THIRTY = "Thirty";
+    private static final String FORTY = "Forty";
+    private int scorePlayer1 = 0;
+    private int scorePlayer2 = 0;
 
     public void wonPoint(String playerName) {
         if (playerName.equals("player1")) {
@@ -16,11 +16,11 @@ public class TennisGame1 implements TennisGame {
     }
 
     private void player2wonPoint() {
-        m_score2 += 1;
+        scorePlayer2 += 1;
     }
 
     private void player1wonPoint() {
-        m_score1 += 1;
+        scorePlayer1 += 1;
     }
 
     public String getScore() {
@@ -34,16 +34,16 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean decisiveGamePoint() {
-        return m_score1 >= 4 || m_score2 >= 4;
+        return scorePlayer1 >= 4 || scorePlayer2 >= 4;
     }
 
     private boolean scoreEqual() {
-        return m_score1 == m_score2;
+        return scorePlayer1 == scorePlayer2;
     }
 
     private String getScoreWhenDecisive() {
         StringBuilder score;
-        int minusResult = m_score1 - m_score2;
+        int minusResult = scorePlayer1 - scorePlayer2;
         if (minusResult == 1) score = new StringBuilder("Advantage player1");
         else if (minusResult == -1) score = new StringBuilder("Advantage player2");
         else if (minusResult >= 2) score = new StringBuilder("Win for player1");
@@ -53,7 +53,7 @@ public class TennisGame1 implements TennisGame {
 
     private String getScoreWhenEqual() {
         StringBuilder score;
-        switch (m_score1) {
+        switch (scorePlayer1) {
             case 0:
                 score = new StringBuilder("Love-All");
                 break;
@@ -74,25 +74,25 @@ public class TennisGame1 implements TennisGame {
     private String getScoreRegularPlay() {
         StringBuilder score = new StringBuilder();
 
-        getScoreForPoints(score, m_score1);
+        getScoreForPoints(score, scorePlayer1);
         score.append("-");
-        getScoreForPoints(score, m_score2);
+        getScoreForPoints(score, scorePlayer2);
         return score.toString();
     }
 
     private void getScoreForPoints(StringBuilder score, int tempScore) {
         switch (tempScore) {
             case 0:
-                score.append(ZERO);
+                score.append(LOVE);
                 break;
             case 1:
-                score.append(ONE);
+                score.append(FIFTEEN);
                 break;
             case 2:
-                score.append(TWO);
+                score.append(THIRTY);
                 break;
             case 3:
-                score.append(THREE);
+                score.append(FORTY);
                 break;
         }
     }
