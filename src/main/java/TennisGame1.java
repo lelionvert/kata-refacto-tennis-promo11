@@ -25,15 +25,13 @@ public class TennisGame1 implements TennisGame {
     }
 
     public String getScore() {
-        StringBuilder score;
         if (m_score1 == m_score2) {
-            score = getScoreWhenEqual();
-        } else if (m_score1 >= 4 || m_score2 >= 4) {
-            score = getScoreWhenAbove4Points();
-        } else {
-            score = getScoreWhenDifferentAndLowerThan4();
+            return  getScoreWhenEqual().toString();
         }
-        return score.toString();
+        if (m_score1 >= 4 || m_score2 >= 4) {
+            return getScoreWhenAbove4Points().toString();
+        }
+        return getScoreWhenDifferentAndLowerThan4().toString();
     }
 
     private StringBuilder getScoreWhenAbove4Points() {
