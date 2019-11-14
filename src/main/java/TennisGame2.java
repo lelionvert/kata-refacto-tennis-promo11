@@ -19,8 +19,8 @@ public class TennisGame2 implements TennisGame {
             score = player1result + "-" + player2result;
         }
         if (firstPlayerScoreIsZero()) {
-            player2result = getOnePlayerScore(scorePlayer2);
             player1result = "Love";
+            player2result = getOnePlayerScore(scorePlayer2);
             score = player1result + "-" + player2result;
         }
 
