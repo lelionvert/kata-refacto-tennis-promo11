@@ -14,9 +14,7 @@ public class TennisGame2 implements TennisGame {
         }
 
         if (secondPlayerScoreIsZero()) {
-            player1result = getOnePlayerScore(scorePlayer1);
-            player2result = "Love";
-            score = player1result + "-" + player2result;
+            score = getScoreWhenOneIsLove(scorePlayer1);
         }
         if (firstPlayerScoreIsZero()) {
             player2result = getOnePlayerScore(scorePlayer2);
@@ -61,6 +59,14 @@ public class TennisGame2 implements TennisGame {
         if (player2Wins()) {
             score = "Win for player2";
         }
+        return score;
+    }
+
+    private String getScoreWhenOneIsLove(int scorePlayer) {
+        String score;
+        player1result = getOnePlayerScore(scorePlayer);
+        player2result = "Love";
+        score =  getOnePlayerScore(scorePlayer) + "-" + "Love";
         return score;
     }
 
