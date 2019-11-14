@@ -43,7 +43,7 @@ public class TennisGame1 implements TennisGame {
                 default:
                         score = new StringBuilder("Deuce");
                     break;
-                
+
             }
         }
         else if (m_score1>=4 || m_score2>=4)
@@ -68,22 +68,26 @@ public class TennisGame1 implements TennisGame {
         {
             if (i==1) tempScore = m_score1;
             else { score.append("-"); tempScore = m_score2;}
-            switch(tempScore)
-            {
-                case 0:
-                    score.append(ZERO);
-                    break;
-                case 1:
-                    score.append(ONE);
-                    break;
-                case 2:
-                    score.append(TWO);
-                    break;
-                case 3:
-                    score.append(THREE);
-                    break;
-            }
+            getScoreForPoints(score, tempScore);
         }
         return score;
+    }
+
+    private void getScoreForPoints(StringBuilder score, int tempScore) {
+        switch(tempScore)
+        {
+            case 0:
+                score.append(ZERO);
+                break;
+            case 1:
+                score.append(ONE);
+                break;
+            case 2:
+                score.append(TWO);
+                break;
+            case 3:
+                score.append(THREE);
+                break;
+        }
     }
 }
