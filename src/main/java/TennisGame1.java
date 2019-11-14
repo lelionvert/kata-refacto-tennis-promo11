@@ -29,17 +29,17 @@ public class TennisGame1 implements TennisGame {
         }
         if (player1getsAdvantage()) return "Advantage player1";
         if (player2getsAdvantage()) return "Advantage player2";
-        if (player1win()) return "Win for player1";
-        if (player2win()) return "Win for player2";
+        if (player1wins()) return "Win for player1";
+        if (player2wins()) return "Win for player2";
 
         return getScoreRegularPlay();
     }
 
-    private boolean player2win() {
+    private boolean player2wins() {
         return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && scorePlayer1 - scorePlayer2 < 1;
     }
 
-    private boolean player1win() {
+    private boolean player1wins() {
         return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && scorePlayer1 - scorePlayer2 > 1;
     }
 
