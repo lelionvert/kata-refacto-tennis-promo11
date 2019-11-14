@@ -52,23 +52,23 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getScoreWhenEqual() {
-        StringBuilder score;
+        String score;
         switch (scorePlayer1) {
             case 0:
-                score = new StringBuilder("Love-All");
+                score = "Love-All";
                 break;
             case 1:
-                score = new StringBuilder("Fifteen-All");
+                score = "Fifteen-All";
                 break;
             case 2:
-                score = new StringBuilder("Thirty-All");
+                score ="Thirty-All";
                 break;
             default:
-                score = new StringBuilder("Deuce");
+                score = "Deuce";
                 break;
 
         }
-        return score.toString();
+        return score;
     }
 
     private String getScoreRegularPlay() {
