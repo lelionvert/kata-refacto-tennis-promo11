@@ -27,13 +27,13 @@ public class TennisGame1 implements TennisGame {
         if (scoreEqual()) {
             return getScoreWhenEqual();
         }
-        if (totoPoint()) {
+        if (decisiveGamePoint()) {
             return getScoreWhenAbove4Points();
         }
         return getScoreWhenDifferentAndLowerThan4();
     }
 
-    private boolean totoPoint() {
+    private boolean decisiveGamePoint() {
         return m_score1 >= 4 || m_score2 >= 4;
     }
 
