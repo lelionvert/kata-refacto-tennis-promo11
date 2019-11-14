@@ -63,13 +63,10 @@ public class TennisGame1 implements TennisGame {
 
     private StringBuilder getScoreWhenDifferentAndLowerThan4() {
         StringBuilder score = new StringBuilder();
-        int tempScore;
-        for (int i = 1; i<3; i++)
-        {
-            if (i==1) tempScore = m_score1;
-            else { score.append("-"); tempScore = m_score2;}
-            getScoreForPoints(score, tempScore);
-        }
+
+        getScoreForPoints(score, m_score1);
+        score.append("-");
+        getScoreForPoints(score, m_score2);
         return score;
     }
 
