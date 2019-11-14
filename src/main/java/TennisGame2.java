@@ -14,24 +14,12 @@ public class TennisGame2 implements TennisGame {
         }
 
         if (secondPlayerScoreIsZero()) {
-            if (scorePlayer1 == 1)
-                player1result = "Fifteen";
-            if (scorePlayer1 == 2)
-                player1result = "Thirty";
-            if (scorePlayer1 == 3)
-                player1result = "Forty";
-
+            player1result = getOnePlayerScore(scorePlayer1);
             player2result = "Love";
             score = player1result + "-" + player2result;
         }
         if (firstPlayerScoreIsZero()) {
-            if (scorePlayer2 == 1)
-                player2result = "Fifteen";
-            if (scorePlayer2 == 2)
-                player2result = "Thirty";
-            if (scorePlayer2 == 3)
-                player2result = "Forty";
-
+            player2result = getOnePlayerScore(scorePlayer2);
             player1result = "Love";
             score = player1result + "-" + player2result;
         }
@@ -74,6 +62,14 @@ public class TennisGame2 implements TennisGame {
             score = "Win for player2";
         }
         return score;
+    }
+
+    private String getOnePlayerScore(int scorePlayer1) {
+        if (scorePlayer1 == 1)
+            return "Fifteen";
+        if (scorePlayer1 == 2)
+            return "Thirty";
+        return "Forty";
     }
 
     private String getScoreAll(String score) {
