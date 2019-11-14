@@ -27,26 +27,18 @@ public class TennisGame1 implements TennisGame {
         if (scoreEqual()) {
             return getScoreWhenEqual();
         }
-        if (decisiveGamePoint()) {
-            return getScoreWhenDecisive();
+        if (scorePlayer1 >= 4 || scorePlayer2 >= 4) {
+            int minusResult = scorePlayer1 - scorePlayer2;
+            if (minusResult == 1) return "Advantage player1";
+            if (minusResult == -1) return "Advantage player2";
+            if (minusResult > 1) return  "Win for player1";
+            return  "Win for player2";
         }
         return getScoreRegularPlay();
     }
 
-    private boolean decisiveGamePoint() {
-        return scorePlayer1 >= 4 || scorePlayer2 >= 4;
-    }
-
     private boolean scoreEqual() {
         return scorePlayer1 == scorePlayer2;
-    }
-
-    private String getScoreWhenDecisive() {
-        int minusResult = scorePlayer1 - scorePlayer2;
-        if (minusResult == 1) return "Advantage player1";
-        if (minusResult == -1) return "Advantage player2";
-        if (minusResult > 1) return  "Win for player1";
-        return  "Win for player2";
     }
 
     private String getScoreWhenEqual() {
