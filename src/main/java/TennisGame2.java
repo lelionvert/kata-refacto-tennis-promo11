@@ -19,7 +19,7 @@ public class TennisGame2 implements TennisGame {
         if (isScoreEqualAndDeuce())
             score = "Deuce";
 
-        if (secondPlayerIsNul()) {
+        if (secondPlayerScoreIsZero()) {
             if (scorePlayer1 == 1)
                 player1result = "Fifteen";
             if (scorePlayer1 == 2)
@@ -82,7 +82,7 @@ public class TennisGame2 implements TennisGame {
         return score;
     }
 
-    private boolean secondPlayerIsNul() {
+    private boolean secondPlayerScoreIsZero() {
         return scorePlayer1 > 0 && scorePlayer2 == 0;
     }
 
