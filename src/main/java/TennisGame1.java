@@ -33,21 +33,23 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean player2wins() {
-        return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && scorePlayer1 - scorePlayer2 < 1;
+        int scoreGap = scorePlayer1 - scorePlayer2;
+        return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && scoreGap < 1;
     }
 
     private boolean player1wins() {
-        return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && scorePlayer1 - scorePlayer2 > 1;
+        int scoreGap = scorePlayer1 - scorePlayer2;
+        return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && scoreGap > 1;
     }
 
     private boolean player2getsAdvantage() {
-        int minusResult = scorePlayer1 - scorePlayer2;
-        return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && minusResult == -1;
+        int scoreGap = scorePlayer1 - scorePlayer2;
+        return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && scoreGap == -1;
     }
 
     private boolean player1getsAdvantage() {
-        int minusResult = scorePlayer1 - scorePlayer2;
-        return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && minusResult == 1;
+        int scoreGap = scorePlayer1 - scorePlayer2;
+        return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && scoreGap == 1;
     }
 
     private boolean scoreEqual() {
