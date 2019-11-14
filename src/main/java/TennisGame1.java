@@ -24,14 +24,11 @@ public class TennisGame1 implements TennisGame {
     }
 
     public String getScore() {
-        if (scoreEqual()) {
-            return getScoreWhenEqual();
-        }
+        if (scoreEqual()) return getScoreWhenEqual();
         if (player1getsAdvantage()) return "Advantage player1";
         if (player2getsAdvantage()) return "Advantage player2";
         if (player1wins()) return "Win for player1";
         if (player2wins()) return "Win for player2";
-
         return getScoreRegularPlay();
     }
 
@@ -72,7 +69,6 @@ public class TennisGame1 implements TennisGame {
 
     private String getScoreRegularPlay() {
         StringBuilder score = new StringBuilder();
-
         getScoreForPoints(score, scorePlayer1);
         score.append("-");
         getScoreForPoints(score, scorePlayer2);
