@@ -7,7 +7,7 @@ public class TennisGame2 implements TennisGame {
 
     public String getScore() {
         String score = "";
-        if (isScoreEqualAndNotDeuce()) {
+        if (isScoreAll()) {
             if (scorePlayer1 == 0)
                 score = "Love";
             if (scorePlayer1 == 1)
@@ -16,7 +16,7 @@ public class TennisGame2 implements TennisGame {
                 score = "Thirty";
             score += "-All";
         }
-        if (isScoreEqualAndDeuce())
+        if (isScoreDeuce())
             score = "Deuce";
 
         if (secondPlayerScoreIsZero()) {
@@ -83,11 +83,11 @@ public class TennisGame2 implements TennisGame {
     }
 
     private boolean player2Wins() {
-        return scorePlayer2 >= 4 && scorePlayer1 >= 0 && (scorePlayer2 - scorePlayer1) >= 2;
+        return scorePlayer2 >= 4 && (scorePlayer2 - scorePlayer1) >= 2;
     }
 
     private boolean player1Wins() {
-        return scorePlayer1 >= 4 && scorePlayer2 >= 0 && (scorePlayer1 - scorePlayer2) >= 2;
+        return scorePlayer1 >= 4 && (scorePlayer1 - scorePlayer2) >= 2;
     }
 
     private boolean player2LeadsWithAdvantage() {
@@ -114,11 +114,11 @@ public class TennisGame2 implements TennisGame {
         return scorePlayer1 > 0 && scorePlayer2 == 0;
     }
 
-    private boolean isScoreEqualAndDeuce() {
+    private boolean isScoreDeuce() {
         return scorePlayer1 == scorePlayer2 && scorePlayer1 >= 3;
     }
 
-    private boolean isScoreEqualAndNotDeuce() {
+    private boolean isScoreAll() {
         return scorePlayer1 == scorePlayer2 && scorePlayer1 < 4;
     }
 
