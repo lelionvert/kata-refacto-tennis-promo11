@@ -42,13 +42,11 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getScoreWhenDecisive() {
-        StringBuilder score;
         int minusResult = scorePlayer1 - scorePlayer2;
-        if (minusResult == 1) score = new StringBuilder("Advantage player1");
-        else if (minusResult == -1) score = new StringBuilder("Advantage player2");
-        else if (minusResult >= 2) score = new StringBuilder("Win for player1");
-        else score = new StringBuilder("Win for player2");
-        return score.toString();
+        if (minusResult == 1) return "Advantage player1";
+        if (minusResult == -1) return "Advantage player2";
+        if (minusResult >= 2) return  "Win for player1";
+        return  "Win for player2";
     }
 
     private String getScoreWhenEqual() {
