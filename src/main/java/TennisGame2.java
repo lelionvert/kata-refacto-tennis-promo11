@@ -42,7 +42,7 @@ public class TennisGame2 implements TennisGame {
             score = player1result + "-" + player2result;
         }
 
-        if (scorePlayer1 > scorePlayer2 && scorePlayer1 < 4) {
+        if (playerOneLeadsWithoutAdvantage()) {
             if (scorePlayer1 == 2)
                 player1result = "Thirty";
             if (scorePlayer1 == 3)
@@ -53,7 +53,7 @@ public class TennisGame2 implements TennisGame {
                 player2result = "Thirty";
             score = player1result + "-" + player2result;
         }
-        if (scorePlayer2 > scorePlayer1 && scorePlayer2 < 4) {
+        if (playerTwoLeadsWithoutAdvantage()) {
             if (scorePlayer2 == 2)
                 player2result = "Thirty";
             if (scorePlayer2 == 3)
@@ -80,6 +80,14 @@ public class TennisGame2 implements TennisGame {
             score = "Win for player2";
         }
         return score;
+    }
+
+    private boolean playerTwoLeadsWithoutAdvantage() {
+        return scorePlayer2 > scorePlayer1 && scorePlayer2 < 4;
+    }
+
+    private boolean playerOneLeadsWithoutAdvantage() {
+        return scorePlayer1 > scorePlayer2 && scorePlayer1 < 4;
     }
 
     private boolean firstPlayerScoreIsZero() {
