@@ -28,12 +28,16 @@ public class TennisGame1 implements TennisGame {
             return getScoreWhenEqual();
         }
         int minusResult = scorePlayer1 - scorePlayer2;
-        if ((scorePlayer1 >= 4 || scorePlayer2 >= 4) && minusResult == 1) return "Advantage player1";
+        if (player1getsAdvantage(minusResult)) return "Advantage player1";
         if ((scorePlayer1 >= 4 || scorePlayer2 >= 4) && minusResult == -1) return "Advantage player2";
         if ((scorePlayer1 >= 4 || scorePlayer2 >= 4) && minusResult > 1) return "Win for player1";
         if ((scorePlayer1 >= 4 || scorePlayer2 >= 4) && minusResult < 1) return "Win for player2";
 
         return getScoreRegularPlay();
+    }
+
+    private boolean player1getsAdvantage(int minusResult) {
+        return (scorePlayer1 >= 4 || scorePlayer2 >= 4) && minusResult == 1;
     }
 
     private boolean scoreEqual() {
