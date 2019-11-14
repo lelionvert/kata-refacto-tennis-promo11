@@ -7,17 +7,11 @@ public class TennisGame2 implements TennisGame {
 
     public String getScore() {
         String score = "";
-        if (isScoreAll()) {
-            if (scorePlayer1 == 0)
-                score = "Love";
-            if (scorePlayer1 == 1)
-                score = "Fifteen";
-            if (scorePlayer1 == 2)
-                score = "Thirty";
-            score += "-All";
-        }
         if (isScoreDeuce())
-            score = "Deuce";
+            return "Deuce";
+        if (isScoreAll()) {
+            return getScoreAll(score);
+        }
 
         if (secondPlayerScoreIsZero()) {
             if (scorePlayer1 == 1)
@@ -79,6 +73,17 @@ public class TennisGame2 implements TennisGame {
         if (player2Wins()) {
             score = "Win for player2";
         }
+        return score;
+    }
+
+    private String getScoreAll(String score) {
+        if (scorePlayer1 == 0)
+            score = "Love";
+        if (scorePlayer1 == 1)
+            score = "Fifteen";
+        if (scorePlayer1 == 2)
+            score = "Thirty";
+        score += "-All";
         return score;
     }
 
