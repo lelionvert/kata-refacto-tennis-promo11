@@ -30,7 +30,7 @@ public class TennisGame2 implements TennisGame {
             player2result = "Love";
             score = player1result + "-" + player2result;
         }
-        if (scorePlayer2 > 0 && scorePlayer1 == 0) {
+        if (firstPlayerScoreIsZero()) {
             if (scorePlayer2 == 1)
                 player2result = "Fifteen";
             if (scorePlayer2 == 2)
@@ -80,6 +80,10 @@ public class TennisGame2 implements TennisGame {
             score = "Win for player2";
         }
         return score;
+    }
+
+    private boolean firstPlayerScoreIsZero() {
+        return scorePlayer2 > 0 && scorePlayer1 == 0;
     }
 
     private boolean secondPlayerScoreIsZero() {
