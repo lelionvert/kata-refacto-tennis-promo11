@@ -52,12 +52,13 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            toto(score);
+            score = toto();
         }
         return score.toString();
     }
 
-    private void toto(StringBuilder score) {
+    private StringBuilder toto() {
+        StringBuilder score = new StringBuilder();
         int tempScore;
         for (int i = 1; i<3; i++)
         {
@@ -79,5 +80,6 @@ public class TennisGame1 implements TennisGame {
                     break;
             }
         }
+        return score;
     }
 }
