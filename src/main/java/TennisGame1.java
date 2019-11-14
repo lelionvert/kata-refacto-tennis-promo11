@@ -5,10 +5,19 @@ public class TennisGame1 implements TennisGame {
     private int m_score2 = 0;
 
     public void wonPoint(String playerName) {
-        if (playerName.equals("player1"))
-            m_score1 += 1;
-        else
-            m_score2 += 1;
+        if (playerName.equals("player1")) {
+            player1wonPoint();
+        } else {
+            player2wonPoint();
+        }
+    }
+
+    private void player2wonPoint() {
+        m_score2 += 1;
+    }
+
+    private void player1wonPoint() {
+        m_score1 += 1;
     }
 
     public String getScore() {
