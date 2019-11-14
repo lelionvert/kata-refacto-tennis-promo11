@@ -28,22 +28,7 @@ public class TennisGame1 implements TennisGame {
         StringBuilder score;
         if (m_score1==m_score2)
         {
-            switch (m_score1)
-            {
-                case 0:
-                        score = new StringBuilder("Love-All");
-                    break;
-                case 1:
-                        score = new StringBuilder("Fifteen-All");
-                    break;
-                case 2:
-                        score = new StringBuilder("Thirty-All");
-                    break;
-                default:
-                        score = new StringBuilder("Deuce");
-                    break;
-
-            }
+            score = getScoreWhenEqual();
         }
         else if (m_score1>=4 || m_score2>=4)
         {
@@ -58,6 +43,27 @@ public class TennisGame1 implements TennisGame {
             score = getScoreWhenDifferentAndLowerThan4();
         }
         return score.toString();
+    }
+
+    private StringBuilder getScoreWhenEqual() {
+        StringBuilder score;
+        switch (m_score1)
+        {
+            case 0:
+                    score = new StringBuilder("Love-All");
+                break;
+            case 1:
+                    score = new StringBuilder("Fifteen-All");
+                break;
+            case 2:
+                    score = new StringBuilder("Thirty-All");
+                break;
+            default:
+                    score = new StringBuilder("Deuce");
+                break;
+
+        }
+        return score;
     }
 
     private StringBuilder getScoreWhenDifferentAndLowerThan4() {
