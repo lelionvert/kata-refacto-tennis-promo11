@@ -65,11 +65,11 @@ public class TennisGame2 implements TennisGame {
             score = player1result + "-" + player2result;
         }
 
-        if (scorePlayer1 > scorePlayer2 && scorePlayer2 >= 3) {
+        if (player1LeadsWithAdvantage()) {
             score = "Advantage player1";
         }
 
-        if (scorePlayer2 > scorePlayer1 && scorePlayer1 >= 3) {
+        if (player2LeadsWithAdvantage()) {
             score = "Advantage player2";
         }
 
@@ -80,6 +80,14 @@ public class TennisGame2 implements TennisGame {
             score = "Win for player2";
         }
         return score;
+    }
+
+    private boolean player2LeadsWithAdvantage() {
+        return scorePlayer2 > scorePlayer1 && scorePlayer1 >= 3;
+    }
+
+    private boolean player1LeadsWithAdvantage() {
+        return scorePlayer1 > scorePlayer2 && scorePlayer2 >= 3;
     }
 
     private boolean playerTwoLeadsWithoutAdvantage() {
