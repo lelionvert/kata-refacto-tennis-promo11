@@ -7,7 +7,7 @@ public class TennisGame2 implements TennisGame {
 
     public String getScore() {
         String score = "";
-        if (scorePlayer1 == scorePlayer2 && scorePlayer1 < 4) {
+        if (isScoreEqualAndNotDeuce()) {
             if (scorePlayer1 == 0)
                 score = "Love";
             if (scorePlayer1 == 1)
@@ -80,6 +80,10 @@ public class TennisGame2 implements TennisGame {
             score = "Win for player2";
         }
         return score;
+    }
+
+    private boolean isScoreEqualAndNotDeuce() {
+        return scorePlayer1 == scorePlayer2 && scorePlayer1 < 4;
     }
 
     private void P1Score() {
