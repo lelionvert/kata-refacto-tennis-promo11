@@ -7,9 +7,6 @@ public class TennisGame2 implements TennisGame
     private String player1result = "";
     private String player2result = "";
 
-    TennisGame2() {
-    }
-
     public String getScore(){
         String score = "";
         if (scorePlayer1 == scorePlayer2 && scorePlayer1 < 4)
