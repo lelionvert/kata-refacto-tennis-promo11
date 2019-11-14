@@ -24,13 +24,21 @@ public class TennisGame1 implements TennisGame {
     }
 
     public String getScore() {
-        if (m_score1 == m_score2) {
+        if (scoreEqual()) {
             return getScoreWhenEqual();
         }
-        if (m_score1 >= 4 || m_score2 >= 4) {
+        if (totoPoint()) {
             return getScoreWhenAbove4Points();
         }
         return getScoreWhenDifferentAndLowerThan4();
+    }
+
+    private boolean totoPoint() {
+        return m_score1 >= 4 || m_score2 >= 4;
+    }
+
+    private boolean scoreEqual() {
+        return m_score1 == m_score2;
     }
 
     private String getScoreWhenAbove4Points() {
