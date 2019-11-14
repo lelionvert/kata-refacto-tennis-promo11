@@ -25,15 +25,7 @@ public class TennisGame2 implements TennisGame {
         }
 
         if (playerOneLeadsWithoutAdvantage()) {
-            if (scorePlayer1 == 2)
-                player1result = "Thirty";
-            if (scorePlayer1 == 3)
-                player1result = "Forty";
-            if (scorePlayer2 == 1)
-                player2result = "Fifteen";
-            if (scorePlayer2 == 2)
-                player2result = "Thirty";
-            score = player1result + "-" + player2result;
+            score = getScorePlayer(scorePlayer1, scorePlayer2);
         }
         if (playerTwoLeadsWithoutAdvantage()) {
             if (scorePlayer2 == 2)
@@ -61,6 +53,20 @@ public class TennisGame2 implements TennisGame {
         if (player2Wins()) {
             score = "Win for player2";
         }
+        return score;
+    }
+
+    private String getScorePlayer(int scorePlayer1, int scorePlayer2) {
+        String score;
+        if (scorePlayer1 == 2)
+            player1result = "Thirty";
+        if (scorePlayer1 == 3)
+            player1result = "Forty";
+        if (scorePlayer2 == 1)
+            player2result = "Fifteen";
+        if (scorePlayer2 == 2)
+            player2result = "Thirty";
+        score = player1result + "-" + player2result;
         return score;
     }
 
