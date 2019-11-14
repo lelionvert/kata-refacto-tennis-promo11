@@ -1,6 +1,10 @@
 
 public class TennisGame1 implements TennisGame {
-    
+
+    public static final String ZERO = "Love";
+    public static final String ONE = "Fifteen";
+    public static final String TWO = "Thirty";
+    public static final String THREE = "Forty";
     private int m_score1 = 0;
     private int m_score2 = 0;
 
@@ -67,16 +71,16 @@ public class TennisGame1 implements TennisGame {
             switch(tempScore)
             {
                 case 0:
-                    score.append("Love");
+                    score.append(ZERO);
                     break;
                 case 1:
-                    score.append("Fifteen");
+                    score.append(ONE);
                     break;
                 case 2:
-                    score.append("Thirty");
+                    score.append(TWO);
                     break;
                 case 3:
-                    score.append("Forty");
+                    score.append(THREE);
                     break;
             }
         }
